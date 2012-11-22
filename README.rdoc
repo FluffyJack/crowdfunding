@@ -3,3 +3,12 @@
 Instantly add simple crowdfunding to your Ruby on Rails application with PayPal Payments Standard.
 
 This project is still in development. Do not use, especially in a production application.
+
+== Testing PayPal
+
+To test PayPal in your local development environment, you'll need to have tunnelling enabled to ensure PayPal's IPN can send the notification to your computer. Setup is very simple.
+
+1. Install the localtunnel gem: gem install localtunnel
+2. On the first run you will need to send localtunnel your public key like so: localtunnel -k ~/.ssh/id_rsa.pub 3000
+3. Configure the engine with the URL localtunnel gives you
+4. Done. Now you can repeat these steps whenever you're using app in your development environment by just running: localtunnel 3000
