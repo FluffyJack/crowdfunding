@@ -1,0 +1,19 @@
+<%= div_for(@project) do %>
+  <h2><%= @project.title %></h2>
+  <div class="crowdfunding-project-description">
+    <p>
+      <%= @project.description %>
+    </p>
+  </div>
+  <div class="crowdfunding-project-details">
+    <p class="crowdfunding-project-money-needed">
+      <%= @project.money_needed.format(:no_cents => true) %> goal
+    </p>
+    <p class="crowdfunding-project-launched">
+      <%= "Launched: #{@project.created_at.strftime('%b %e, %Y')}" %>
+    </p>
+    <p class="crowdfunding-project-funding-ends">
+      <%= "Funding Ends: #{@project.end_date.strftime('%b %e, %Y')}" %>
+    </p>
+  </div>
+<% end %>

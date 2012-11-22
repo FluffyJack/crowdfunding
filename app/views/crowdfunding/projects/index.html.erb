@@ -1,0 +1,14 @@
+<h2>Projects</h2>
+<div class="crowdfunding-projects">
+  <% @projects.each do |project| %>
+    <%= div_for(project) do %>
+      <h3><%= project.title %></h3>
+      <p class="crowdfunding-project-description">
+        <%= truncate(project.description, :length => 200) %>
+      </p>
+      <p class="crowdfunding-project-link">
+        <%= link_to "View Project", project_path(project) %>
+      </p>
+    <% end %>
+  <% end %>
+</div>
