@@ -7,11 +7,11 @@ require "crowdfunding/version"
 Gem::Specification.new do |s|
   s.name        = "crowdfunding"
   s.version     = Crowdfunding::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Crowdfunding."
-  s.description = "TODO: Description of Crowdfunding."
+  s.authors     = ["Jack Dean Watson-Hamblin"]
+  s.email       = ["info@fluffyjack.com"]
+  s.homepage    = "http://www.fluffyjack.com/"
+  s.summary     = "Instantly add simple crowdfunding to your Ruby on Rails application with PayPal Payments Standard."
+  s.description = "Instantly add simple crowdfunding to your Ruby on Rails application with PayPal Payments Standard."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

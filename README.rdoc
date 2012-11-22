@@ -1,3 +1,5 @@
 = Crowdfunding
 
-This project rocks and uses MIT-LICENSE.
+Instantly add simple crowdfunding to your Ruby on Rails application with PayPal Payments Standard.
+
+This project is still in development. Do not use, especially in a production application.
