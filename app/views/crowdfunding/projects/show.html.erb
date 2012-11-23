@@ -16,4 +16,12 @@
       <%= "Funding Ends: #{@project.end_date.strftime('%b %e, %Y')}" %>
     </p>
   </div>
+  <div class="crowdfunding-project-donation-form">
+    <%= form_tag new_donation_path, :method => "get" do %>
+      <%= hidden_field_tag 'project_id', @project.id %>
+      <%= label 'amount', 'Donation: $' %>
+      <%= text_field_tag 'amount' %>
+      <%= submit_tag "Donate Now" %>
+    <% end %>
+  </div>
 <% end %>

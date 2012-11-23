@@ -11,5 +11,17 @@ module Crowdfunding
       :converter => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : raise(ArgumentError, "Can't convert #{value.class} to Money") }
 
     scope :current, lambda { where("end_date > ?", Time.zone.now) }
+
+    def paypal_attributes(return_url, notify_url, amount)
+      values = {
+        business: Crowdfunding.paypal_email,
+        cmd: '_xclick',
+        return: return_url,
+        item_name: "Donation to Fillim Project: #{title}",
+        item_number: id,
+        amount: amount,
+        notify_url: notify_url
+      }
+    end
   end
 end

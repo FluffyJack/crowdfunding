@@ -4,6 +4,16 @@ Instantly add simple crowdfunding to your Ruby on Rails application with PayPal 
 
 This project is still in development. Do not use, especially in a production application.
 
+== Configuration
+
+There are several configuation variables. Here is the list and what they do:
+
+- paypal_email: this will set the PayPal email address to use for making payments to
+- paypal_sandbox: set this to true if you're wanting to test the functionality with PayPal's sandbox area. Sign up at http://developer.paypal.com/
+- domain_without_ending_slash: This is the domain name the app is running on. MAKE SURE NOT TO PUT AN ENDING SLASH (this is a bad setup and will be fixed in the future)
+
+To set the configuration, create a the file config/initializers/crowdfunding.rb and set each variable like so: Crowdfunding.variable = value
+
 == Testing PayPal
 
 To test PayPal in your local development environment, you'll need to have tunnelling enabled to ensure PayPal's IPN can send the notification to your computer. Setup is very simple.

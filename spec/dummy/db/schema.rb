@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122043238) do
+ActiveRecord::Schema.define(:version => 20121123061919) do
+
+  create_table "crowdfunding_donations", :force => true do |t|
+    t.text     "params"
+    t.string   "txn_id"
+    t.string   "payment_status"
+    t.integer  "project_id"
+    t.integer  "gross_payment_cents"
+    t.integer  "processing_fee_cents"
+    t.string   "currency"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "crowdfunding_projects", :force => true do |t|
     t.string   "title"

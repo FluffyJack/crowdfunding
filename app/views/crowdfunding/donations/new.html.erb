@@ -1,0 +1,12 @@
+<div class="crowdfunding-donation-confirmation">
+  <p class="crowdfunding-donation-amount">
+    You will be donating: <%= Money.new(params[:amount].to_f * 100, "USD").format %> USD
+  </p>
+
+  <%= form_tag "https://www#{(Crowdfunding.paypal_sandbox ? '.sandbox' : '')}.paypal.com/cgi-bin/websrc" do %>
+    <% @project.paypal_attributes(project_url(@project.id), "#{Crowdfunding.domain_without_ending_slash}#{donations_path}", Money.new(params[:amount].to_f * 100, "USD")).each do |k,v| %>
+      <%= hidden_field_tag k.to_s, v.to_s %>
+    <% end %>
+    <%= submit_tag "Donate Now with PayPal" %>
+  <% end %>
+</div>
